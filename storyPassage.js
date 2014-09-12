@@ -9,7 +9,8 @@ angular.module('storyPassage', [])
       }
     };
 
-    $scope.fillLinkListPassage = function(num) {
+    $scope.fillLinkListPassage = function(newnum) {
+      num = typeof newnum !== 'undefined' ? newnum : 0;
       var rawText = $scope.findPassage(num);
 
       //var rawText = data.data[num].text;

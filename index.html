@@ -7,13 +7,13 @@
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('1')" href="#">Refresh psg</a></span>
+      <span><a ng-click="fillLinkListPassage('10_dinner')" href="#">Refresh psg</a></span>
       <p><span>Link Text: {{linkText}}</span></p>
       <p><span>Link To: {{linkTo}}</span></p>
       <p><span>Passage: {{raw}}</span></p>
       <p><span>Raw: {{trueRaw}}</span></p>
       <p><span>Link Text: <a ng-click="fillPassage(1)" href="#">{{linkText}}</a></span></p>
-      <p ng-repeat="text in linkText"><span>Listed Link: <a ng-click="fillLinkListPassage('{{linkTo[$index]}}')" href="#">{{text}}</a></span></p>
+      <p ng-repeat="text in linkText"><span>Listed Link: <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p>
     </div>
   </body>
 </html>

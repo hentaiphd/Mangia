@@ -4,16 +4,19 @@
     <script src="angular.min.js"></script>
     <script src="storyPassage.js"></script>
     <script src="story.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('tomid')" href="#">Refresh psg (default is 10_dinner)</a></span>
+      <span><a ng-click="fillLinkListPassage('1')" href="#">Refresh psg (default is 2 for list, tomid for img)</a></span>
 
-      <span ng-show="text_psg"><p><span>Passage: {{raw}}</span></p>
-      <p ng-repeat="text in linkText"><span>Listed Link: <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
+      <span ng-show="list_psg"><p><span>{{raw}}</span></p>
+      <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
 
-      <span ng-show="img_psg"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkText[0]}}"></span>
+      <span ng-show="img_psg"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkText[0]}}"></a></p></span>
+
+      <span ng-show="inline_psg"><p compile="html"></p></span>
 
       <p>____________</p>
 

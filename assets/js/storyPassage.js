@@ -55,7 +55,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       if($scope.img_psg == true) {
         $scope.linkImg = rawText.split(",");
         $scope.linkTo = $scope.linkImg[1];
-        $scope.linkText = [$scope.linkImg[0] + ".png"];
+        $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
       } else if($scope.img_two == true){
         var imgLinkObj = rawText.split("&");
         $scope.linkTo = [];
@@ -63,11 +63,11 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
 
         var imgOne = imgLinkObj[0].split(",");
         $scope.linkTo.push(imgOne[1]);
-        $scope.linkText.push(imgOne[0] + ".png");
+        $scope.linkText.push("assets/img/" + imgOne[0] + ".png");
 
         var imgTwo = imgLinkObj[1].split(",");
         $scope.linkTo.push(imgTwo[1]);
-        $scope.linkText.push(imgTwo[0] + ".png");
+        $scope.linkText.push("assets/img/" + imgTwo[0] + ".png");
       }else if($scope.list_psg == true){
         var linkTextRegExp = /\[\[([^)]+?)\]\]/g;
         var linkToRegExp = /\|([^)]+?)\]\]/g;

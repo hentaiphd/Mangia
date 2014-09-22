@@ -9,7 +9,7 @@
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('82')" href="#">Refresh psg (default is 2 for list, tomid for img)</a></span>
+      <span><a ng-click="fillLinkListPassage('1')" href="#">Restart</a></span>
 
       <span ng-show="list_psg"><p><span>{{raw}}</span></p>
       <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
@@ -17,7 +17,7 @@
       <span ng-show="img_psg"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkText[0]}}"></a></p></span>
 
       <span ng-show="img_two">
-      <p ng-repeat="img in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#"><img src="{{linkText[$index]}}"></a></a></span>+ {{linkTo[$index]}}</p></span>
+      <p ng-repeat="img in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#"><img src="{{linkText[$index]}}"></a></a></span></p></span>
 
       <span ng-show="inline_psg"><p compile="html"></p></span>
 

@@ -9,24 +9,19 @@
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('1')" href="#">Refresh psg (default is 2 for list, tomid for img)</a></span>
+      <span><a ng-click="fillLinkListPassage('82')" href="#">Refresh psg (default is 2 for list, tomid for img)</a></span>
 
       <span ng-show="list_psg"><p><span>{{raw}}</span></p>
       <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
 
       <span ng-show="img_psg"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkText[0]}}"></a></p></span>
 
+      <span ng-show="img_two">
+      <p ng-repeat="img in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#"><img src="{{linkText[$index]}}"></a></a></span>+ {{linkTo[$index]}}</p></span>
+
       <span ng-show="inline_psg"><p compile="html"></p></span>
 
-      <p>____________</p>
-
-      <p><span>Link Text: {{linkText}}</span></p>
-      <p><span>Link To: {{linkTo}}</span></p>
-      <p><span>Passage: {{raw}}</span></p>
-      <p><span>Raw: {{trueRaw}}</span></p>
-      <p><span>Link Text: <a ng-click="fillPassage(1)" href="#">{{linkText}}</a></span></p>
-      <p ng-repeat="text in linkText"><span>Listed Link: <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p>
-      <p><span>Img text: {{linkImg}}</p></span>
+      <span ng-show="plain"><p>{{_text}}</p></span>
     </div>
   </body>
 </html>

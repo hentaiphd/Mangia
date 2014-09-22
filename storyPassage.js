@@ -1,23 +1,13 @@
 angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
-    // configure new 'compile' directive by passing a directive
-    // factory function. The factory function injects the '$compile'
+  //comments here https://docs.angularjs.org/api/ng/service/$compile
     $compileProvider.directive('compile', function($compile) {
-      // directive factory creates a link function
       return function(scope, element, attrs) {
         scope.$watch(
           function(scope) {
-             // watch the 'compile' expression for changes
             return scope.$eval(attrs.compile);
           },
           function(value) {
-            // when the 'compile' expression changes
-            // assign it into the current DOM
             element.html(value);
-
-            // compile the new DOM and link it to the current
-            // scope.
-            // NOTE: we only compile .childNodes so that
-            // we don't get into infinite loop compiling ourselves
             $compile(element.contents())(scope);
           }
         );
@@ -37,10 +27,13 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       num = typeof newnum !== 'undefined' ? newnum : 0;
       var rawObj = $scope.findPassage(num);
       var rawText = $scope.findPassage(num).text;
+
       //different types of passages
       $scope.img_psg = false;
       $scope.list_psg = false;
       $scope.inline_psg = false;
+      $scope.img_two = false;
+      $scope.plain = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         if(rawObj.tags[i] == "list") {
@@ -52,6 +45,10 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         } else if(rawObj.tags[i] == "img") {
           $scope.img_psg = true;
           console.log("img");
+        } else if(rawObj.tags[i] == "img2") {
+          $scope.img_two = true;
+        } else if(rawObj.tags[i] == "plain") {
+          $scope.plain = true;
         }
       }
 
@@ -59,7 +56,19 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         $scope.linkImg = rawText.split(",");
         $scope.linkTo = $scope.linkImg[1];
         $scope.linkText = [$scope.linkImg[0] + ".png"];
-      } else if($scope.list_psg == true){
+      } else if($scope.img_two == true){
+        var imgLinkObj = rawText.split("&");
+        $scope.linkTo = [];
+        $scope.linkText = [];
+
+        var imgOne = imgLinkObj[0].split(",");
+        $scope.linkTo.push(imgOne[1]);
+        $scope.linkText.push(imgOne[0] + ".png");
+
+        var imgTwo = imgLinkObj[1].split(",");
+        $scope.linkTo.push(imgTwo[1]);
+        $scope.linkText.push(imgTwo[0] + ".png");
+      }else if($scope.list_psg == true){
         var linkTextRegExp = /\[\[([^)]+?)\]\]/g;
         var linkToRegExp = /\|([^)]+?)\]\]/g;
         $scope.linkTo = rawText.match(linkToRegExp);
@@ -79,6 +88,8 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         parsedText = rawText.replace("[[" + $scope.linkText + "|" + $scope.linkTo + "]]", "<a ng-click=\"fillLinkListPassage('" + $scope.linkTo + "')\" href='#'>" + $scope.linkText + "</a>").replace(/[\]}[{|]/g,'');
 
         $scope.html = $sce.trustAsHtml(parsedText);
+      } else if($scope.plain == true) {
+        $scope._text = rawText;
       }
     };
   }]);

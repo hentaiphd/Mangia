@@ -4,16 +4,26 @@
     <script src="angular.min.js"></script>
     <script src="storyPassage.js"></script>
     <script src="story.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('10_dinner')" href="#">Refresh psg</a></span>
+      <span><a ng-click="fillLinkListPassage('tomid')" href="#">Refresh psg (default is 10_dinner)</a></span>
+
+      <span ng-show="text_psg"><p><span>Passage: {{raw}}</span></p>
+      <p ng-repeat="text in linkText"><span>Listed Link: <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
+
+      <span ng-show="img_psg"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkText[0]}}"></span>
+
+      <p>____________</p>
+
       <p><span>Link Text: {{linkText}}</span></p>
       <p><span>Link To: {{linkTo}}</span></p>
       <p><span>Passage: {{raw}}</span></p>
       <p><span>Raw: {{trueRaw}}</span></p>
       <p><span>Link Text: <a ng-click="fillPassage(1)" href="#">{{linkText}}</a></span></p>
       <p ng-repeat="text in linkText"><span>Listed Link: <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p>
+      <p><span>Img text: {{linkImg}}</p></span>
     </div>
   </body>
 </html>

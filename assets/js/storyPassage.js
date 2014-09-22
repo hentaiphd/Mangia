@@ -36,19 +36,22 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.plain = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
-        if(rawObj.tags[i] == "list") {
-          $scope.list_psg = true;
-          console.log("list");
-        } else if(rawObj.tags[i] == "inline") {
-          $scope.inline_psg = true;
-          console.log("inline");
-        } else if(rawObj.tags[i] == "img") {
-          $scope.img_psg = true;
-          console.log("img");
-        } else if(rawObj.tags[i] == "img2") {
-          $scope.img_two = true;
-        } else if(rawObj.tags[i] == "plain") {
-          $scope.plain = true;
+        switch(rawObj.tags[i]) {
+          case "list":
+            $scope.list_psg = true;
+            break;
+          case "inline":
+            $scope.inline_psg = true;
+            break;
+          case "img":
+            $scope.img_psg = true;
+            break;
+          case "img2":
+            $scope.img_two = true;
+            break;
+          case "plain":
+            $scope.plain = true;
+            break;
         }
       }
 
@@ -68,7 +71,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         var imgTwo = imgLinkObj[1].split(",");
         $scope.linkTo.push(imgTwo[1]);
         $scope.linkText.push("assets/img/" + imgTwo[0] + ".png");
-      }else if($scope.list_psg == true){
+      } else if($scope.list_psg == true){
         var linkTextRegExp = /\[\[([^)]+?)\]\]/g;
         var linkToRegExp = /\|([^)]+?)\]\]/g;
         $scope.linkTo = rawText.match(linkToRegExp);

@@ -10,6 +10,30 @@ body {
     color: #000;
 }
 
+a:link {
+    color: #867970;
+    font-style: italic;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #867970;
+    font-style: none;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #867970;
+    font-style: italic;
+    text-decoration: none;
+}
+
+a:active {
+    color: #867970;
+    font-style: italic;
+    text-decoration: none;
+}
+
 .centered {
   position: fixed;
   top: 50%;

@@ -81,7 +81,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       if($scope.img_psg == true) {
         $scope.linkImgSet = rawText.split(",");
         $scope.linkImg = ["assets/img/" + $scope.linkImgSet[0] + ".png"];
-        $scope.linkTo = $scope.linkImg[1];
+        $scope.linkTo = $scope.linkImgSet[1];
       } else if($scope.img_hover == true){
         $scope.linkImgSet = rawText.split(",");
         //non-hover img

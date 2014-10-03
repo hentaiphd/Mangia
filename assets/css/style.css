@@ -1,5 +1,13 @@
+@font-face {
+    font-family: Aleo;
+    src: url(../font/Aleo-Regular.otf);
+}
+
 body {
     background-color: #ffffff;
+    font-family: "Aleo-Regular", Aleo;
+    font-size: 12pt;
+    color: #000;
 }
 
 .centered {

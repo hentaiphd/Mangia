@@ -16,6 +16,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
   })
   .controller('PassageController', ['$scope', '$sce', function($scope, $sce) {
     $scope.findPassage = function(num) {
+      $scope.cur_psg = num;
       for(i = 0; i < data.data.length; i++){
         if(data.data[i].title == num){
           return data.data[i];

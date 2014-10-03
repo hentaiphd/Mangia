@@ -827,7 +827,7 @@ You pause, shivering, [["I'm just feeling really freaked out. I need to get back
 [[Wash your face in the bathroom.|37]]
 
 
-:: 27_5 [img]
+:: 27_5 [hoverimg]
 begin,begin_on,27_6
 
 

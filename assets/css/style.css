@@ -8,6 +8,11 @@ body {
     font-family: "Aleo-Regular", Aleo;
     font-size: 12pt;
     color: #000;
+    text-align: center;
+}
+
+p {
+    text-align: center;
 }
 
 a:link {

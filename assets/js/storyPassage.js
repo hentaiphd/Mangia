@@ -27,14 +27,14 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
     $scope.hoverIn = function(){
       if($scope.img_hover == true){
         this.hoverEdit = true;
-        $scope.linkText = ["assets/img/" + $scope.linkImg[1] + ".png"];
+        $scope.linkImg = ["assets/img/" + $scope.linkImgSet[1] + ".png"];
       }
     };
 
     $scope.hoverOut = function(){
       if($scope.img_hover == true){
         this.hoverEdit = false;
-        $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
+        $scope.linkImg = ["assets/img/" + $scope.linkImgSet[0] + ".png"];
       }
     };
 
@@ -50,6 +50,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.img_two = false;
       $scope.plain = false;
       $scope.img_hover = false;
+      $scope.layout_1 = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -58,6 +59,9 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
             break;
           case "inline":
             $scope.inline_psg = true;
+            break;
+          case "layout_1":
+            $scope.layout_1 = true;
             break;
           case "img":
             $scope.img_psg = true;
@@ -75,16 +79,16 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       }
 
       if($scope.img_psg == true) {
-        $scope.linkImg = rawText.split(",");
-        $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
+        $scope.linkImgSet = rawText.split(",");
+        $scope.linkImg = ["assets/img/" + $scope.linkImgSet[0] + ".png"];
         $scope.linkTo = $scope.linkImg[1];
       } else if($scope.img_hover == true){
-        $scope.linkImg = rawText.split(",");
+        $scope.linkImgSet = rawText.split(",");
         //non-hover img
-        $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
+        $scope.linkImg = ["assets/img/" + $scope.linkImgSet[0] + ".png"];
         //hover img
-        $scope.linkHover = ["assets/img/" + $scope.linkImg[1] + ".png"];
-        $scope.linkTo = $scope.linkImg[2];
+        $scope.linkHover = ["assets/img/" + $scope.linkImgSet[1] + ".png"];
+        $scope.linkTo = $scope.linkImgSet[2];
       } else if($scope.img_two == true){
         var imgLinkObj = rawText.split("&");
         $scope.linkTo = [];
@@ -117,6 +121,21 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         parsedText = rawText.replace("[[" + $scope.linkText + "|" + $scope.linkTo + "]]", "<a ng-click=\"fillLinkListPassage('" + $scope.linkTo + "')\" href='#'>" + $scope.linkText + "</a>").replace(/[\]}[{|]/g,'');
 
         $scope.html = $sce.trustAsHtml(parsedText);
+      } else if($scope.layout_1 == true){
+        var linkTextRegExp = /\[\[([^)]+)\|/;
+        var linkToRegExp = /\|([^)]+)\]\]/;
+
+        $scope.linkText = linkTextRegExp.exec(rawText)[1];
+        $scope.linkTo = linkToRegExp.exec(rawText)[1];
+
+        $scope.position = [["10%","24%"],["90%","5%"],["90%","70%"]];
+        console.log($scope.position[0][1]);
+        $scope.parsedText = rawText.replace("[[" + $scope.linkText + "|" + $scope.linkTo + "]]", "<a ng-click=\"fillLinkListPassage('" + $scope.linkTo + "')\" href='#'>" + $scope.linkText + "</a>").replace(/[\]}[{|]/g,'');
+        $scope.parsedText = $scope.parsedText.split("*");
+
+        $scope.partone = $sce.trustAsHtml($scope.parsedText[0]);
+        $scope.parttwo = $sce.trustAsHtml($scope.parsedText[1]);
+        $scope.partthree = $sce.trustAsHtml($scope.parsedText[2]);
       } else if($scope.plain == true) {
         $scope._text = rawText;
       }

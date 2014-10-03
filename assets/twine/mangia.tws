@@ -80,7 +80,7 @@ Tiddler
 p36
 (dp37
 g21
-VYou haven't been feeling like yourself. In fact, you think it's been months since you've really felt normal. Although, honestly, you're not even sure what you mean by "feeling normal" -- you do know, that it's not how you're feeling [[now|1_2]].
+VYou haven't been feeling like yourself. In fact, you think it's been months since you've really felt normal.*Although, honestly, you're not even sure what you mean by "feeling normal."*You do know, that it's not how you're feeling [[now|1_2]].
 p38
 sg23
 V1
@@ -88,13 +88,13 @@ p39
 sg25
 g26
 ((I2014
-I9
-I22
-I13
-I37
-I24
-I0
-I265
+I10
+I3
+I17
+I12
+I38
+I4
+I276
 I1
 tp40
 (dp41
@@ -102,7 +102,7 @@ tp42
 Rp43
 sg31
 (lp44
-Vinline
+Vlayout_1
 p45
 asg33
 g26
@@ -6908,7 +6908,7 @@ tp2134
 Rp2135
 sbsa(dp2136
 g14
-I01
+I00
 sg15
 (lp2137
 F2317.833333333332

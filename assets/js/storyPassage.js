@@ -23,6 +23,21 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       }
     };
 
+    //for switching image on hover
+    $scope.hoverIn = function(){
+      if($scope.img_hover == true){
+        this.hoverEdit = true;
+        $scope.linkText = ["assets/img/" + $scope.linkImg[1] + ".png"];
+      }
+    };
+
+    $scope.hoverOut = function(){
+      if($scope.img_hover == true){
+        this.hoverEdit = false;
+        $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
+      }
+    };
+
     $scope.fillLinkListPassage = function(newnum) {
       num = typeof newnum !== 'undefined' ? newnum : 0;
       var rawObj = $scope.findPassage(num);
@@ -34,6 +49,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.inline_psg = false;
       $scope.img_two = false;
       $scope.plain = false;
+      $scope.img_hover = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -52,13 +68,23 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           case "plain":
             $scope.plain = true;
             break;
+          case "hoverimg":
+            $scope.img_hover = true;
+            break;
         }
       }
 
       if($scope.img_psg == true) {
         $scope.linkImg = rawText.split(",");
-        $scope.linkTo = $scope.linkImg[1];
         $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
+        $scope.linkTo = $scope.linkImg[1];
+      } else if($scope.img_hover == true){
+        $scope.linkImg = rawText.split(",");
+        //non-hover img
+        $scope.linkText = ["assets/img/" + $scope.linkImg[0] + ".png"];
+        //hover img
+        $scope.linkHover = ["assets/img/" + $scope.linkImg[1] + ".png"];
+        $scope.linkTo = $scope.linkImg[2];
       } else if($scope.img_two == true){
         var imgLinkObj = rawText.split("&");
         $scope.linkTo = [];

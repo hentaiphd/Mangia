@@ -9,7 +9,7 @@
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('1')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
+      <span><a ng-click="fillLinkListPassage('2')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
 
       <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
       <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
@@ -28,6 +28,16 @@
         <div style="position: absolute; top:{{position[1][0]}}; left:{{position[1][1]}}; width:400px;"><p compile="parttwo"></p></div>
         <div style="position: absolute; top:{{position[2][0]}}; left:{{position[2][1]}}; width:400px;"><p compile="partthree"></p></div>
         <div style="position: absolute;" class="centered"><img src="{{linkImg}}"></img></div>
+      </span>
+
+      <span ng-show="two_float_right">
+        <div style="position: absolute; top:20%; left:17%"><img src="{{linkImg[0]}}"></img></div>
+
+        <a ng-click="fillLinkListPassage(linkTo[0])" href="#"><div style="position: absolute; top:20%; left: 55%"><img src="{{linkImg[1]}}" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)"></img></div>
+        <div style="position: absolute; top:31%; left:67%" class="whitetext" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)">{{textTop}}</div></a>
+
+        <a ng-click="fillLinkListPassage(linkTo[1])" href="#"><div style="position: absolute; top:56%; left: 55%"><img src="{{linkImg[2]}}" ng-mouseover="hoverIn(2)" ng-mouseleave="hoverOut(2)"></img></div>
+        <div style="position: absolute; top:67%; left:67%" class="whitetext" ng-mouseover="hoverIn(2)" ng-mouseleave="hoverOut(2)">{{textBottom}}</div></a>
       </span>
 
       <span ng-show="plain"><p>{{_text}}</p></span>

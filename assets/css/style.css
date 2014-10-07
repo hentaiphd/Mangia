@@ -45,3 +45,8 @@ a:active {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.whitetext {
+    color: #fff;
+    font-style: normal;
+}

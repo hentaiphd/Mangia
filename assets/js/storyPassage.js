@@ -25,17 +25,33 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
     };
 
     //for switching image on hover
-    $scope.hoverIn = function(){
+    $scope.hoverIn = function(row){
       if($scope.img_hover == true){
         this.hoverEdit = true;
         $scope.linkImg = ["assets/img/" + $scope.linkImgSet[1] + ".png"];
+      } else if($scope.two_float_right == true){
+        if(row == 1){
+          $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[1] + ".png";
+          $scope.textTop = "Answer.";
+        } else if(row == 2){
+          $scope.linkImg[2] = "assets/img/" + linkImgSet[2].split(",")[1] + ".png";
+          $scope.textBottom = "Ignore.";
+        }
       }
     };
 
-    $scope.hoverOut = function(){
+    $scope.hoverOut = function(row){
       if($scope.img_hover == true){
         this.hoverEdit = false;
         $scope.linkImg = ["assets/img/" + $scope.linkImgSet[0] + ".png"];
+      } else if($scope.two_float_right == true){
+        if(row == 1){
+          $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[0] + ".png";
+          $scope.textTop = "";
+        } else if(row == 2){
+          $scope.linkImg[2] = "assets/img/" + linkImgSet[2].split(",")[0] + ".png";
+          $scope.textBottom = "";
+        }
       }
     };
 
@@ -53,6 +69,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.img_hover = false;
       $scope.layout_1 = false;
       $scope.two_horizontal = false;
+      $scope.two_float_right = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -76,6 +93,10 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
             break;
           case "two_horizontal":
             $scope.two_horizontal = true;
+            break;
+          case "two_float_right":
+            $scope.two_float_right = true;
+            break;
         }
       }
 
@@ -144,6 +165,19 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         $scope.partone = $sce.trustAsHtml($scope.parsedText[0]);
         $scope.parttwo = $sce.trustAsHtml($scope.parsedText[1]);
         $scope.partthree = $sce.trustAsHtml($scope.parsedText[2]);
+      } else if($scope.two_float_right == true) {
+        linkImgSet = rawText.split("&");
+        $scope.linkTo = rawText.split("|")[1].split(",");
+
+        $scope.linkImg = [];
+        //left
+        $scope.linkImg[0] = "assets/img/" + linkImgSet[0] + ".png";
+        //top right
+        $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[0] + ".png";
+        $scope.textTop = "";
+        //bottom right
+        $scope.linkImg[2] = "assets/img/" + linkImgSet[2].split(",")[0] + ".png";
+        $scope.textBottom = "";
       }
     };
   }]);

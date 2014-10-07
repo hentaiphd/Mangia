@@ -69,7 +69,7 @@ p33
 g30
 sbsa(dp34
 g14
-I01
+I00
 sg15
 (lp35
 F155.00000000000003
@@ -121,7 +121,7 @@ tp48
 Rp49
 sbsa(dp50
 g14
-I00
+I01
 sg15
 (lp51
 F465.0
@@ -132,7 +132,7 @@ Tiddler
 p52
 (dp53
 g21
-VYour cell phone is buzzing--it's mom.\u000a\u000a[[Answer.|3]]\u000a[[Ignore.|4]]\u000a
+V002&002_a_1,002_a_2&002_b_1,002_b_2&|3,4
 p54
 sg23
 V2
@@ -140,13 +140,13 @@ p55
 sg25
 g26
 ((I2014
-I9
+I10
+I6
 I22
-I13
-I37
-I44
+I6
+I46
 I0
-I265
+I279
 I1
 tp56
 (dp57
@@ -154,7 +154,7 @@ tp58
 Rp59
 sg31
 (lp60
-Vlist
+Vtwo_float_right
 p61
 asg33
 g26

@@ -155,11 +155,8 @@ The kitchen is dark. You live in a railroad style apartment, which means that th
 [["Sure, ok, I love you. See you soon,"|7_9]] you say, feeling a sense of relief. Spending time with Emmett every night is your main source of relaxation.
 
 
-:: 7_9 [list]
-Emmett says, "I love you too--bye!" and hangs up.
-
-[[Get a snack from the kitchen.|8]]
-[[Begin to prepare dinner for two.|9]]
+:: 7_9 [two_link_img]
+007_9_a_1,007_9_a_2&007_9_b_1,007_9_b_2&|9,8
 
 
 :: 6_1_3 [inline]

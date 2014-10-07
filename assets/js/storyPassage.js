@@ -37,6 +37,14 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           $scope.linkImg[2] = "assets/img/" + linkImgSet[2].split(",")[1] + ".png";
           $scope.textBottom = "Ignore.";
         }
+      } else if($scope.two_link_img == true) {
+        if(row == 3 /*left*/){
+          $scope.linkImg[0] = "assets/img/" + linkImgSet[0].split(",")[1] + ".png";
+          $scope.textTop = "Prepare dinner for two.";
+        } else if(row == 4 /*right*/){
+          $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[1] + ".png";
+          $scope.textBottom = "Have a snack.";
+        }
       }
     };
 
@@ -50,6 +58,14 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           $scope.textTop = "";
         } else if(row == 2){
           $scope.linkImg[2] = "assets/img/" + linkImgSet[2].split(",")[0] + ".png";
+          $scope.textBottom = "";
+        }
+      } else if($scope.two_link_img == true) {
+        if(row == 3 /*left*/){
+          $scope.linkImg[0] = "assets/img/" + linkImgSet[0].split(",")[0] + ".png";
+          $scope.textTop = "";
+        } else if(row == 4 /*right*/){
+          $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[0] + ".png";
           $scope.textBottom = "";
         }
       }
@@ -70,6 +86,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.layout_1 = false;
       $scope.two_horizontal = false;
       $scope.two_float_right = false;
+      $scope.two_link_img = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -96,6 +113,9 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
             break;
           case "two_float_right":
             $scope.two_float_right = true;
+            break;
+          case "two_link_img":
+            $scope.two_link_img = true;
             break;
         }
       }
@@ -177,6 +197,17 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         $scope.textTop = "";
         //bottom right
         $scope.linkImg[2] = "assets/img/" + linkImgSet[2].split(",")[0] + ".png";
+        $scope.textBottom = "";
+      } else if($scope.two_link_img == true) {
+        linkImgSet = rawText.split("&");
+        $scope.linkTo = rawText.split("|")[1].split(",");
+
+        $scope.linkImg = [];
+        //left
+        $scope.linkImg[0] = "assets/img/" + linkImgSet[0].split(",")[0] + ".png";
+        $scope.textTop = "";
+        //right
+        $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[0] + ".png";
         $scope.textBottom = "";
       }
     };

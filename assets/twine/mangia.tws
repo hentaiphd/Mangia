@@ -121,11 +121,11 @@ tp48
 Rp49
 sbsa(dp50
 g14
-I01
+I00
 sg15
 (lp51
 F465.0
-aF14.999999999999995
+aF16.66666666666666
 asg17
 (itiddlywiki
 Tiddler
@@ -8703,7 +8703,7 @@ tp2668
 Rp2669
 sbsa(dp2670
 g14
-I00
+I01
 sg15
 (lp2671
 F1675.3333333333328
@@ -8714,7 +8714,7 @@ Tiddler
 p2672
 (dp2673
 g21
-VEmmett says, "I love you too--bye!" and hangs up.\u000a\u000a[[Get a snack from the kitchen.|8]]\u000a[[Begin to prepare dinner for two.|9]]
+V007_9_a_1,007_9_a_2&007_9_b_1,007_9_b_2&|9,8
 p2674
 sg23
 V7_9
@@ -8722,13 +8722,13 @@ p2675
 sg25
 g26
 ((I2014
-I9
+I10
+I6
 I22
-I16
-I20
-I37
+I56
+I18
 I0
-I265
+I279
 I1
 tp2676
 (dp2677
@@ -8736,7 +8736,7 @@ tp2678
 Rp2679
 sg31
 (lp2680
-Vlist
+Vtwo_link_img
 p2681
 asg33
 g26

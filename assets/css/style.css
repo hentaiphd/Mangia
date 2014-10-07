@@ -1,12 +1,12 @@
 @font-face {
-    font-family: Aleo;
-    src: url(../font/Aleo-Regular.otf);
+    font-family: Aleo-Light;
+    src: url(../font/Aleo-Light.otf);
 }
 
 body {
     background-color: #ffffff;
-    font-family: "Aleo-Regular", Aleo;
-    font-size: 12pt;
+    font-family: "Aleo-Light", Aleo-Light;
+    font-size: 14pt;
     color: #000;
     text-align: center;
 }

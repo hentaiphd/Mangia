@@ -52,6 +52,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.plain = false;
       $scope.img_hover = false;
       $scope.layout_1 = false;
+      $scope.two_horizontal = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -60,9 +61,6 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
             break;
           case "inline":
             $scope.inline_psg = true;
-            break;
-          case "layout_1":
-            $scope.layout_1 = true;
             break;
           case "img":
             $scope.img_psg = true;
@@ -76,6 +74,8 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           case "hoverimg":
             $scope.img_hover = true;
             break;
+          case "two_horizontal":
+            $scope.two_horizontal = true;
         }
       }
 
@@ -122,14 +122,21 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         parsedText = rawText.replace("[[" + $scope.linkText + "|" + $scope.linkTo + "]]", "<a ng-click=\"fillLinkListPassage('" + $scope.linkTo + "')\" href='#'>" + $scope.linkText + "</a>").replace(/[\]}[{|]/g,'');
 
         $scope.html = $sce.trustAsHtml(parsedText);
-      } else if($scope.layout_1 == true){
+      } else if($scope.plain == true) {
+        $scope._text = rawText;
+      } else if($scope.two_horizontal == true) {
         var linkTextRegExp = /\[\[([^)]+)\|/;
         var linkToRegExp = /\|([^)]+)\]\]/;
 
         $scope.linkText = linkTextRegExp.exec(rawText)[1];
         $scope.linkTo = linkToRegExp.exec(rawText)[1];
 
-        $scope.position = [["10%","24%"],["90%","5%"],["90%","70%"]];
+        $scope.linkImgSet = rawText.split("^");
+        $scope.linkImg = "assets/img/" + $scope.linkImgSet[1] + ".png";
+
+        rawText = rawText.replace("^" + $scope.linkImgSet[1], "");
+
+        $scope.position = [["20%","16%"],["70%","15%"],["70%","53%"]];
         console.log($scope.position[0][1]);
         $scope.parsedText = rawText.replace("[[" + $scope.linkText + "|" + $scope.linkTo + "]]", "<a ng-click=\"fillLinkListPassage('" + $scope.linkTo + "')\" href='#'>" + $scope.linkText + "</a>").replace(/[\]}[{|]/g,'');
         $scope.parsedText = $scope.parsedText.split("*");
@@ -137,8 +144,6 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         $scope.partone = $sce.trustAsHtml($scope.parsedText[0]);
         $scope.parttwo = $sce.trustAsHtml($scope.parsedText[1]);
         $scope.partthree = $sce.trustAsHtml($scope.parsedText[2]);
-      } else if($scope.plain == true) {
-        $scope._text = rawText;
       }
     };
   }]);

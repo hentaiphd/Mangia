@@ -7,8 +7,8 @@ Trigger warning: This game deals with chronic medical conditions, eating disorde
 
 
 
-:: 1 [layout_1]
-You haven't been feeling like yourself. In fact, you think it's been months since you've really felt normal.*Although, honestly, you're not even sure what you mean by "feeling normal."*You do know, that it's not how you're feeling [[now|1_2]].
+:: 1 [two_horizontal]
+You haven't been feeling like yourself. In fact, you think it's been months since you've really felt normal.*Although, honestly, you're not even sure what you mean by "feeling normal."*You do know, that it's not how you're feeling [[now|1_2]].^001
 
 
 :: 1_2 [hoverimg]

@@ -23,10 +23,11 @@
 
       <span ng-show="inline_psg" class="centered" style="width:50%;"><p compile="html"></p></span>
 
-      <span ng-show="layout_1">
+      <span ng-show="two_horizontal">
         <div style="position: absolute; top:{{position[0][0]}}; left:{{position[0][1]}}"><p compile="partone"></p></div>
-        <div style="position: absolute; top:{{position[1][0]}}; left:{{position[1][1]}}"><p compile="parttwo"></p></div>
-        <div style="position: absolute; top:{{position[2][0]}}; left:{{position[2][1]}}"><p compile="partthree"></p></div>
+        <div style="position: absolute; top:{{position[1][0]}}; left:{{position[1][1]}}; width:400px;"><p compile="parttwo"></p></div>
+        <div style="position: absolute; top:{{position[2][0]}}; left:{{position[2][1]}}; width:400px;"><p compile="partthree"></p></div>
+        <div style="position: absolute;" class="centered"><img src="{{linkImg}}"></img></div>
       </span>
 
       <span ng-show="plain"><p>{{_text}}</p></span>

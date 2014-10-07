@@ -9,7 +9,7 @@
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('1')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
+      <span><a ng-click="fillLinkListPassage('8_3')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
 
       <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
       <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
@@ -45,7 +45,7 @@
         <div style="position: absolute; top:48%; left:23%" class="whitetext" ng-mouseover="hoverIn(3)" ng-mouseleave="hoverOut(3)">{{textTop}}</div></a>
 
         <a ng-click="fillLinkListPassage(linkTo[1])" href="#"><div style="position: absolute; top:30%; left: 54%"><img src="{{linkImg[1]}}" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)"></img></div>
-        <div style="position: absolute; top:48%; left:65%" class="whitetext" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)">{{textBottom}}</div></a>
+        <div style="position: absolute; top:48%; left:62%; width:200px;" class="whitetext" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)">{{textBottom}}</div></a>
       </span>
 
       <span ng-show="plain"><p>{{_text}}</p></span>

@@ -40,10 +40,10 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       } else if($scope.two_link_img == true) {
         if(row == 3 /*left*/){
           $scope.linkImg[0] = "assets/img/" + linkImgSet[0].split(",")[1] + ".png";
-          $scope.textTop = "Prepare dinner for two.";
+          $scope.textTop = $scope.leftText;
         } else if(row == 4 /*right*/){
           $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[1] + ".png";
-          $scope.textBottom = "Have a snack.";
+          $scope.textBottom = $scope.rightText;
         }
       }
     };
@@ -148,8 +148,10 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         var linkToRegExp = /\|([^)]+?)\]\]/g;
         $scope.linkTo = rawText.match(linkToRegExp);
         $scope.linkText = rawText.match(linkTextRegExp);
+        $scope.raw = rawText;
 
         for(i = 0; i < $scope.linkTo.length; i++){
+          $scope.raw = $scope.raw.replace($scope.linkText[i], "");
           $scope.linkTo[i] = $scope.linkTo[i].replace("|", "").replace(/[\]}[{|]/g,'');
           $scope.linkText[i] = $scope.linkText[i].replace("|" + $scope.linkTo[i], "").replace(/[\]}[{|]/g,'');
         }
@@ -201,6 +203,8 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       } else if($scope.two_link_img == true) {
         linkImgSet = rawText.split("&");
         $scope.linkTo = rawText.split("|")[1].split(",");
+        $scope.leftText = rawText.split("|")[2].split("^")[0];
+        $scope.rightText = rawText.split("|")[2].split("^")[1];
 
         $scope.linkImg = [];
         //left

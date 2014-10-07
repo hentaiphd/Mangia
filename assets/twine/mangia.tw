@@ -125,11 +125,9 @@ You see some black stains on the ceiling above you in the reflection. You have t
 You do your best to keep the apartment clean, but the building is old and dusty. You're pretty sure there's mold in there too, somewhere. The dust gives you asthma sometimes. Dark, dirty places always stress you out... [[it's just an asthma trigger waiting to happen.|8_3]]
 
 
-:: 8_3 [list]
-There's not much in your kitchen cupboards.
+:: 8_3 [two_link_img]
+007_9_b_1,007_9_b_2&007_9_a_1,007_9_a_2&|10,9|Take out the Cheeze-It's.^Make dinner for you and your boyfriend.
 
-[[Take out the Cheez-It's.|10]]
-[[Prepare dinner for two, because your boyfriend is coming over later.|9]]
 
 
 
@@ -156,7 +154,7 @@ The kitchen is dark. You live in a railroad style apartment, which means that th
 
 
 :: 7_9 [two_link_img]
-007_9_a_1,007_9_a_2&007_9_b_1,007_9_b_2&|9,8
+007_9_a_1,007_9_a_2&007_9_b_1,007_9_b_2&|9,8|Prepare dinner for two.^Have a snack.
 
 
 :: 6_1_3 [inline]

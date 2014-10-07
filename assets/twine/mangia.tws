@@ -8703,7 +8703,7 @@ tp2668
 Rp2669
 sbsa(dp2670
 g14
-I01
+I00
 sg15
 (lp2671
 F1675.3333333333328
@@ -8714,7 +8714,7 @@ Tiddler
 p2672
 (dp2673
 g21
-V007_9_a_1,007_9_a_2&007_9_b_1,007_9_b_2&|9,8
+V007_9_a_1,007_9_a_2&007_9_b_1,007_9_b_2&|9,8|Prepare dinner for two.^Have a snack.
 p2674
 sg23
 V7_9
@@ -8724,9 +8724,9 @@ g26
 ((I2014
 I10
 I6
-I22
-I56
+I23
 I18
+I8
 I0
 I279
 I1
@@ -13383,7 +13383,7 @@ tp4108
 Rp4109
 sbsa(dp4110
 g14
-I00
+I01
 sg15
 (lp4111
 F300.3333333333333
@@ -13394,7 +13394,7 @@ Tiddler
 p4112
 (dp4113
 g21
-VThere's not much in your kitchen cupboards.\u000a\u000a[[Take out the Cheez-It's.|10]]\u000a[[Prepare dinner for two, because your boyfriend is coming over later.|9]]\u000a
+V007_9_b_1,007_9_b_2&007_9_a_1,007_9_a_2&|10,9|Take out the Cheeze-It's.^Make dinner for you and your boyfriend.\u000a\u000a
 p4114
 sg23
 V8_3
@@ -13402,13 +13402,13 @@ p4115
 sg25
 g26
 ((I2014
-I9
-I22
-I15
-I7
-I30
+I10
+I6
+I23
+I19
 I0
-I265
+I0
+I279
 I1
 tp4116
 (dp4117
@@ -13416,7 +13416,7 @@ tp4118
 Rp4119
 sg31
 (lp4120
-Vlist
+Vtwo_link_img
 p4121
 asg33
 g26

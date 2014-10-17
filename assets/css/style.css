@@ -1,9 +1,9 @@
-@font-face {
-    font-family: Aleo-Light;
-    src: url(../font/Aleo-Light.otf);
-}
+.container {
+    display: flex;
+    flex-direction: row;
 
-body {
+    border: 1px solid #000;
+
     background-color: #ffffff;
     font-family: "Aleo-Light", Aleo-Light;
     font-size: 14pt;
@@ -11,8 +11,25 @@ body {
     text-align: center;
 }
 
-p {
-    text-align: center;
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.whitetext {
+    color: #fff;
+    font-style: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@font-face {
+    font-family: Aleo-Light;
+    src: url(../font/Aleo-Light.otf);
 }
 
 a:link {
@@ -37,16 +54,4 @@ a:active {
     color: #867970;
     font-style: italic;
     text-decoration: none;
-}
-
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.whitetext {
-    color: #fff;
-    font-style: normal;
 }

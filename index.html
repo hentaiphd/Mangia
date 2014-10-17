@@ -8,47 +8,112 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
-    <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('27_8')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
+      <div ng-controller="PassageController" class="container">
+        <span>
+          <a ng-click="fillLinkListPassage('7_9')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a>
+        </span>
 
-      <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
-      <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
+        <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
+          <p ng-repeat="text in linkText">
+            <span>
+              <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a>
+            </span>
+          </p>
+        </span>
 
-      <span ng-show="img_psg" class="centered" style="width:50%;"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkImg[0]}}"></a></p></span>
+        <span ng-show="img_psg" class="centered" style="width:50%;">
+          <p>
+            <a ng-click="fillLinkListPassage(linkTo)" href="#">
+              <img src="{{linkImg[0]}}"></img>
+            </a>
+          </p>
+        </span>
 
-      <span ng-show="img_hover" class="centered"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkImg[0]}}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"></a></p></span>
+        <span ng-show="img_hover" class="centered">
+          <p>
+            <a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkImg[0]}}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"></img>
+            </a>
+          </p>
+        </span>
 
-      <span ng-show="img_two">
-      <div style="position: absolute; top:20%; left:20%"><a ng-click="fillLinkListPassage(linkTo[0])" href="#"><img src="{{linkImg[0]}}"></img></a></div><div style="position: absolute; top:20%; left:60%"><a ng-click="fillLinkListPassage(linkTo[1])" href="#"><img src="{{linkImg[1]}}"></img></a></div></span>
+        <span ng-show="img_two">
+          <div style="position: absolute; top:20%; left:20%">
+            <a ng-click="fillLinkListPassage(linkTo[0])" href="#">
+              <img src="{{linkImg[0]}}"></img>
+            </a>
+          </div>
+          <div style="position: absolute; top:20%; left:60%">
+            <a ng-click="fillLinkListPassage(linkTo[1])" href="#">
+              <img src="{{linkImg[1]}}"></img>
+            </a>
+          </div>
+        </span>
 
-      <span ng-show="inline_psg" class="centered" style="width:50%;"><p compile="html"></p></span>
+        <span ng-show="inline_psg" class="centered" style="width:50%;">
+          <p compile="html"></p>
+        </span>
 
-      <span ng-show="two_horizontal">
-        <div style="position: absolute; top:{{position[0][0]}}; left:{{position[0][1]}}"><p compile="partone"></p></div>
-        <div style="position: absolute; top:{{position[1][0]}}; left:{{position[1][1]}}; width:400px;"><p compile="parttwo"></p></div>
-        <div style="position: absolute; top:{{position[2][0]}}; left:{{position[2][1]}}; width:400px;"><p compile="partthree"></p></div>
-        <div style="position: absolute;" class="centered"><img src="{{linkImg}}"></img></div>
-      </span>
+        <span ng-show="two_horizontal">
+          <div style="position: absolute;" class="centered">
+            <div style="position: absolute; top:-25%; left:3%">
+              <p compile="partone"></p>
+            </div>
+            <div style="position: absolute; top:102%; left:0%; width:400px;">
+              <p compile="parttwo"></p>
+            </div>
+            <div style="position: absolute; top:102%; left:56%; width:400px;">
+              <p compile="partthree"></p>
+            </div>
+            <img src="{{linkImg}}"></img>
+          </div>
+        </span>
 
-      <span ng-show="two_float_right">
-        <div style="position: absolute; top:20%; left:17%"><img src="{{linkImg[0]}}"></img></div>
+        <span ng-show="two_float_right">
+          <div style="position: absolute; top:20%; left:17%">
+            <img src="{{linkImg[0]}}"></img>
+            <a ng-click="fillLinkListPassage(linkTo[0])" href="#">
+              <div style="position: absolute; top:0%; left: 115%">
+                <img src="{{linkImg[1]}}" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)"></img>
+                <div class="whitetext" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)">
+                  {{textTop}}
+                </div>
+              </div>
+            </a>
+            <a ng-click="fillLinkListPassage(linkTo[1])" href="#">
+              <div style="position: absolute; top:58%; left: 115%">
+                <img src="{{linkImg[2]}}" ng-mouseover="hoverIn(2)" ng-mouseleave="hoverOut(2)"></img>
+                <div class="whitetext" ng-mouseover="hoverIn(2)" ng-mouseleave="hoverOut(2)">
+                  {{textBottom}}
+                </div>
+              </div>
+            </a>
+          </div>
+        </span>
 
-        <a ng-click="fillLinkListPassage(linkTo[0])" href="#"><div style="position: absolute; top:20%; left: 55%"><img src="{{linkImg[1]}}" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)"></img></div>
-        <div style="position: absolute; top:31%; left:67%" class="whitetext" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)">{{textTop}}</div></a>
+        <span ng-show="two_link_img">
+          <div style="position: absolute; top: 30%; left: 15%; width: 100px; height 100px;">
+            <a ng-click="fillLinkListPassage(linkTo[0])" href="#">
+              <div style="position: absolute; top:0%; left: 0%">
+                <img src="{{linkImg[0]}}" ng-mouseover="hoverIn(3)" ng-mouseleave="hoverOut(3)"></img>
+                <div class="whitetext" ng-mouseover="hoverIn(3)" ng-mouseleave="hoverOut(3)">
+                  {{textTop}}
+                </div>
+              </div>
+            </a>
+            <a ng-click="fillLinkListPassage(linkTo[1])" href="#">
+              <div style="position: absolute; top:0%; left: 500%">
+                <img src="{{linkImg[1]}}" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)"></img>
+                <div class="whitetext" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)">
+                  {{textBottom}}
+                </div>
+              </div>
+            </a>
+          </div>
+        </span>
 
-        <a ng-click="fillLinkListPassage(linkTo[1])" href="#"><div style="position: absolute; top:56%; left: 55%"><img src="{{linkImg[2]}}" ng-mouseover="hoverIn(2)" ng-mouseleave="hoverOut(2)"></img></div>
-        <div style="position: absolute; top:67%; left:67%" class="whitetext" ng-mouseover="hoverIn(2)" ng-mouseleave="hoverOut(2)">{{textBottom}}</div></a>
-      </span>
-
-      <span ng-show="two_link_img">
-        <a ng-click="fillLinkListPassage(linkTo[0])" href="#"><div style="position: absolute; top:30%; left: 15%"><img src="{{linkImg[0]}}" ng-mouseover="hoverIn(3)" ng-mouseleave="hoverOut(3)"></img></div>
-        <div style="position: absolute; top:48%; left:23%" class="whitetext" ng-mouseover="hoverIn(3)" ng-mouseleave="hoverOut(3)">{{textTop}}</div></a>
-
-        <a ng-click="fillLinkListPassage(linkTo[1])" href="#"><div style="position: absolute; top:30%; left: 54%"><img src="{{linkImg[1]}}" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)"></img></div>
-        <div style="position: absolute; top:48%; left:62%; width:200px;" class="whitetext" ng-mouseover="hoverIn(4)" ng-mouseleave="hoverOut(4)">{{textBottom}}</div></a>
-      </span>
-
-      <span ng-show="plain"><p>{{_text}}</p></span>
+        <span ng-show="plain">
+          <p>{{_text}}</p>
+        </span>
     </div>
   </body>
 </html>

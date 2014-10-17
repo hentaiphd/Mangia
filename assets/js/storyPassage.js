@@ -185,8 +185,6 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
 
         rawText = rawText.replace("^" + $scope.linkImgSet[1], "");
 
-        $scope.position = [["20%","16%"],["70%","15%"],["70%","53%"]];
-        console.log($scope.position[0][1]);
         $scope.parsedText = rawText.replace("[[" + $scope.linkText + "|" + $scope.linkTo + "]]", "<a ng-click=\"fillLinkListPassage('" + $scope.linkTo + "')\" href='#'>" + $scope.linkText + "</a>").replace(/[\]}[{|]/g,'');
         $scope.parsedText = $scope.parsedText.split("*");
 

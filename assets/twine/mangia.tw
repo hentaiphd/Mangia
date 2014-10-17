@@ -1225,7 +1225,7 @@ You lay on your side and bring your knees to your chest. You're tired, but you c
 
 
 :: apple [food]
-apple,pasta
+cheese,pasta
 
 
 
@@ -1510,6 +1510,10 @@ You feel dizzy and nauseous. You wish you would just throw it all up--it would b
 mom_off,mom,54
 
 
+:: 57 [list]
+[[Which will you eat?|58]]
+
+
 :: 54 [hoverimg]
 crying_off,crying,55
 
@@ -1521,10 +1525,6 @@ swallow_off,swallow,57
 
 :: 55 [hoverimg]
 docs_off,docs,56
-
-
-:: 57 [list]
-[[Which will you eat?|58]]
 
 
 :: 50_3 [inline]
@@ -1548,7 +1548,7 @@ fries,59&fish,60
 
 
 :: 61 [food]
-apple,64&fries,63
+cracker,64&fries,63
 
 
 :: 63 [hoverimg]
@@ -1556,7 +1556,7 @@ swallow_off,swallow,65
 
 
 :: 65 [food]
-banana,67&bread,68
+grapes,67&bread,68
 
 
 :: mom 3 [Twine.image]
@@ -1606,7 +1606,7 @@ swallow_off,swallow,70
 
 
 :: 70 [food]
-cheese,71&carrot,72
+cheese,71&egg,72
 
 
 :: 72 [hoverimg]
@@ -1630,7 +1630,7 @@ swallow_off,swallow,81
 
 
 :: 77 [food]
-banana,79&bread,80
+pizza,79&bread,80
 
 
 

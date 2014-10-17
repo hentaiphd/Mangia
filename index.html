@@ -9,7 +9,7 @@
   </head>
   <body>
     <div ng-controller="PassageController">
-      <span><a ng-click="fillLinkListPassage('1')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
+      <span><a ng-click="fillLinkListPassage('27_8')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a></span>
 
       <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
       <p ng-repeat="text in linkText"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a></span></p></span>
@@ -19,7 +19,7 @@
       <span ng-show="img_hover" class="centered"><p><a ng-click="fillLinkListPassage(linkTo)" href="#"><img src="{{linkImg[0]}}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"></a></p></span>
 
       <span ng-show="img_two">
-      <p ng-repeat="img in linkImg"><span><a ng-click="fillLinkListPassage(linkTo[$index])" href="#"><img src="{{linkImg[$index]}}"></a></a></span></p></span>
+      <div style="position: absolute; top:20%; left:20%"><a ng-click="fillLinkListPassage(linkTo[0])" href="#"><img src="{{linkImg[0]}}"></img></a></div><div style="position: absolute; top:20%; left:60%"><a ng-click="fillLinkListPassage(linkTo[1])" href="#"><img src="{{linkImg[1]}}"></img></a></div></span>
 
       <span ng-show="inline_psg" class="centered" style="width:50%;"><p compile="html"></p></span>
 

@@ -900,7 +900,7 @@ You're walking slowly towards work. Your feet are dragging, like they're sloggin
 
 
 
-:: 27_9 [img]
+:: 27_9 [hoverimg]
 swallow_off,swallow,28
 
 
@@ -1195,13 +1195,6 @@ As you roll up the pasta and bring it closer to your mouth, you feel your throat
 
 
 
-:: 43_2 [list]
-You lay on your side and bring your knees to your chest. You're tired, but you can't seem to shut your eyes. All you can do is think about what you could've had for dinner. Bread, quiche, pizza, meatballs, steak, pork buns...
-
-[[These are all things that you can't eat anymore.|apple]]
-
-
-
 :: 39 [inline]
 You head home with peanut butter cookies, a box of Cheez-It's and angel hair pasta. You figure that angel hair is so light that it won't bother you... hopefully. [[Otherwise, you might not eat anything.|39_2]]
 
@@ -1216,6 +1209,13 @@ It's five.
 
 [[Go home.|43]]
 [[Go to the grocery store.|38]]
+
+
+:: 43_2 [list]
+You lay on your side and bring your knees to your chest. You're tired, but you can't seem to shut your eyes. All you can do is think about what you could've had for dinner. Bread, quiche, pizza, meatballs, steak, pork buns...
+
+[[These are all things that you can't eat anymore.|apple]]
+
 
 
 :: 46_8 [list]

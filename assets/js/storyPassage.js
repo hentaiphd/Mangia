@@ -244,12 +244,14 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
 
         if (rawText.indexOf("&") >= 0) {
           $scope.double_img = true;
+          $scope.single_img = false;
           $scope.linkImgSet = rawText.split("&");
           $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0].split(",")[0] + "_off.png";
           $scope.linkTo[0] = $scope.linkImgSet[0].split(",")[1];
           $scope.linkImg[1] = "assets/img/" + $scope.linkImgSet[1].split(",")[0] + "_off.png";
           $scope.linkTo[1] = $scope.linkImgSet[1].split(",")[1];
         } else {
+          $scope.single_img = true;
           $scope.double_img = false;
           $scope.linkImgSet = rawText.split(",");
           $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0] + "_off.png";

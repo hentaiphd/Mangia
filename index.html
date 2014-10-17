@@ -10,7 +10,7 @@
   <body>
       <div ng-controller="PassageController" class="container">
         <span>
-          <a ng-click="fillLinkListPassage('57')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a>
+          <a ng-click="fillLinkListPassage('apple')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a>
         </span>
 
         <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
@@ -21,12 +21,18 @@
           </p>
         </span>
 
-        <span ng-show="food_img" class="centered">
-          <p ng-repeat="img in linkImg">
-            <span>
-              <a ng-click="fillLinkListPassage(linkTo[$index])" href="#"><img src="{{linkImg[$index]}}" ng-mouseover="hoverIn($index)" ng-mouseleave="hoverOut($index)"></img></a>
-            </span>
-          </p>
+        <span ng-show="food_img">
+          <div ng-show="double_img" style="position: absolute; top:0%; left:0%; width:100px; height:100px;">
+            <div style="position: absolute; top:190%; left:175%">
+              <a ng-click="fillLinkListPassage(linkTo[0])" href="#"><img src="{{linkImg[0]}}" ng-mouseover="hoverIn(0)" ng-mouseleave="hoverOut(0)"></img></a>
+            </div>
+            <div style="position: absolute; top:190%; left:675%">
+              <a ng-click="fillLinkListPassage(linkTo[1])" href="#"><img src="{{linkImg[1]}}" ng-mouseover="hoverIn(1)" ng-mouseleave="hoverOut(1)"></img></a>
+            </div>
+          </div>
+          <div ng-show="single_img" class="centered">
+            <a ng-click="fillLinkListPassage(linkTo[0])" href="#"><img src="{{linkImg[0]}}" ng-mouseover="hoverIn(0)" ng-mouseleave="hoverOut(0)"></img></a>
+          </div>
         </span>
 
         <span ng-show="img_psg" class="centered" style="width:50%;">

@@ -10,13 +10,21 @@
   <body>
       <div ng-controller="PassageController" class="container">
         <span>
-          <a ng-click="fillLinkListPassage('1')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a>
+          <a ng-click="fillLinkListPassage('57')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a>
         </span>
 
         <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>
           <p ng-repeat="text in linkText">
             <span>
               <a ng-click="fillLinkListPassage(linkTo[$index])" href="#">{{text}}</a>
+            </span>
+          </p>
+        </span>
+
+        <span ng-show="food_img" class="centered">
+          <p ng-repeat="img in linkImg">
+            <span>
+              <a ng-click="fillLinkListPassage(linkTo[$index])" href="#"><img src="{{linkImg[$index]}}" ng-mouseover="hoverIn($index)" ng-mouseleave="hoverOut($index)"></img></a>
             </span>
           </p>
         </span>

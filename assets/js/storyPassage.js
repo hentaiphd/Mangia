@@ -45,6 +45,16 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[1] + ".png";
           $scope.textBottom = $scope.rightText;
         }
+      } else if($scope.food_img == true) {
+        if ($scope.double_img) {
+          if(row == 0) {
+            $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0].split(",")[0] + ".gif";
+          } else {
+            $scope.linkImg[1] = "assets/img/" + $scope.linkImgSet[1].split(",")[0] + ".gif";
+          }
+        } else {
+          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0] + ".gif";
+        }
       }
     };
 
@@ -68,6 +78,13 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[0] + ".png";
           $scope.textBottom = "";
         }
+      } else if($scope.food_img == true) {
+        if ($scope.double_img) {
+          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0].split(",")[0] + "_off.png";
+          $scope.linkImg[1] = "assets/img/" + $scope.linkImgSet[1].split(",")[0] + "_off.png";
+        } else {
+          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0] + "_off.png";
+        }
       }
     };
 
@@ -87,6 +104,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.two_horizontal = false;
       $scope.two_float_right = false;
       $scope.two_link_img = false;
+      $scope.food_img = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -116,6 +134,9 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
             break;
           case "two_link_img":
             $scope.two_link_img = true;
+            break;
+          case "food":
+            $scope.food_img = true;
             break;
         }
       }
@@ -217,6 +238,23 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         //right
         $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[0] + ".png";
         $scope.textBottom = "";
+      } else if($scope.food_img == true) {
+        $scope.linkImg = [];
+        $scope.linkTo = [];
+
+        if (rawText.indexOf("&") >= 0) {
+          $scope.double_img = true;
+          $scope.linkImgSet = rawText.split("&");
+          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0].split(",")[0] + "_off.png";
+          $scope.linkTo[0] = $scope.linkImgSet[0].split(",")[1];
+          $scope.linkImg[1] = "assets/img/" + $scope.linkImgSet[1].split(",")[0] + "_off.png";
+          $scope.linkTo[1] = $scope.linkImgSet[1].split(",")[1];
+        } else {
+          $scope.double_img = false;
+          $scope.linkImgSet = rawText.split(",");
+          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0] + "_off.png";
+          $scope.linkTo[0] = $scope.linkImgSet[1];
+        }
       }
     };
   }]);

@@ -1224,13 +1224,13 @@ You lay on your side and bring your knees to your chest. You're tired, but you c
 [[Sit down on the couch and wait.|48]]
 
 
-:: apple [img]
+:: apple [food]
 apple,pasta
 
 
 
 
-:: pasta [img]
+:: pasta [food]
 pasta,chicken
 
 
@@ -1293,11 +1293,11 @@ You walk back to your apartment slowly. You're so tired.
 Emmett looks at you, closely, and asks [["...for breakfast?"|46_8]]
 
 
-:: chicken [img]
+:: chicken [food]
 chicken,fries
 
 
-:: fries [img]
+:: fries [food]
 fries,pizza
 
 
@@ -1328,7 +1328,7 @@ You hesitate, [["I haven't eaten. I can't eat."|46_3]]
 
 
 
-:: pizza [img]
+:: pizza [food]
 pizza,44
 
 
@@ -1542,12 +1542,12 @@ Emmett rubs your back, and asks if it would feel better to lie down. You say tha
 swallow_off,swallow,61
 
 
-:: 58 [img2]
+:: 58 [food]
 fries,59&fish,60
 
 
 
-:: 61 [img2]
+:: 61 [food]
 apple,64&fries,63
 
 
@@ -1555,7 +1555,7 @@ apple,64&fries,63
 swallow_off,swallow,65
 
 
-:: 65 [img2]
+:: 65 [food]
 banana,67&bread,68
 
 
@@ -1567,8 +1567,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAA
 swallow_off,swallow,62
 
 
-:: 62 [img2]
-apple,64&chicken,63
+:: 62 [food]
+egg,64&bread,63
 
 
 
@@ -1576,7 +1576,7 @@ apple,64&chicken,63
 swallow_off,swallow,66
 
 
-:: 66 [img2]
+:: 66 [food]
 cheese,67&grapes,68
 
 
@@ -1589,7 +1589,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAG4CAYAAABrQLGXAAAACXBIWXMAAA
 swallow_off,swallow,69
 
 
-:: 69 [img2]
+:: 69 [food]
 cracker,71&pasta,72
 
 
@@ -1597,7 +1597,7 @@ cracker,71&pasta,72
 swallow_off,swallow,73
 
 
-:: 73 [img2]
+:: 73 [food]
 soup,75&fish,76
 
 
@@ -1605,7 +1605,7 @@ soup,75&fish,76
 swallow_off,swallow,70
 
 
-:: 70 [img2]
+:: 70 [food]
 cheese,71&carrot,72
 
 
@@ -1617,8 +1617,8 @@ swallow_off,swallow,74
 The end.
 
 
-:: 74 [img2]
-bread,75&fries,76
+:: 74 [food]
+bread,75&egg,76
 
 
 :: 75 [hoverimg]
@@ -1629,8 +1629,8 @@ swallow_off,swallow,77
 swallow_off,swallow,81
 
 
-:: 77 [img2]
-banana,79&apple,80
+:: 77 [food]
+banana,79&bread,80
 
 
 
@@ -1646,7 +1646,7 @@ He loved you and wanted you to grow up healthy and strong. He taught you how to 
 swallow_off,swallow,78
 
 
-:: 78 [img2]
+:: 78 [food]
 cheese,79&soup,80
 
 

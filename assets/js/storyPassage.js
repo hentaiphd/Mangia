@@ -28,7 +28,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
     $scope.hoverIn = function(row){
       if($scope.img_hover == true){
         this.hoverEdit = true;
-        $scope.linkImg = ["assets/img/" + $scope.linkImgSet[1] + ".png"];
+        $scope.linkImg = ["assets/img/" + $scope.linkImgSet[1] + ".gif"];
       } else if($scope.two_float_right == true){
         if(row == 1){
           $scope.linkImg[1] = "assets/img/" + linkImgSet[1].split(",")[1] + ".png";

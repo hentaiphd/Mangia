@@ -254,7 +254,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
           $scope.single_img = true;
           $scope.double_img = false;
           $scope.linkImgSet = rawText.split(",");
-          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0] + "_off.png";
+          $scope.linkImg[0] = "assets/img/" + $scope.linkImgSet[0] + ".gif";
           $scope.linkTo[0] = $scope.linkImgSet[1];
         }
       }

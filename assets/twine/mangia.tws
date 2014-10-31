@@ -5298,7 +5298,7 @@ tp1639
 Rp1640
 sbsa(dp1641
 g14
-I01
+I00
 sg15
 (lp1642
 F379.3333333333333
@@ -12447,7 +12447,7 @@ tp3820
 Rp3821
 sbsa(dp3822
 g14
-I00
+I01
 sg15
 (lp3823
 F323.25
@@ -12458,7 +12458,7 @@ Tiddler
 p3824
 (dp3825
 g21
-VThe kitchen was always especially clean. The dishes were always either hand-washed or put into the dishwasher directly after any meal, without question. The plates were all white or clear--no stains or cracks. Every pot was always gleaming and silver. Even the smallest burn on a pot would make my mom throw it into the trash.\u000a\u000a[[Go into the bathroom and look in the full-length mirror.|13]]\u000a[[Check your phone--it's been buzzing.|14]]
+VThe kitchen was always especially clean. The dishes were always either hand-washed or put into the dishwasher directly after any meal, without question. The plates were all white or clear--no stains or cracks. Every pot was always gleaming and silver. Even the smallest burn on a pot would cause her to throw it into the trash.\u000a\u000a[[Go into the bathroom and look in the full-length mirror.|13]]\u000a[[Check your phone--it's been buzzing.|14]]
 p3826
 sg23
 V12_2
@@ -12466,13 +12466,13 @@ p3827
 sg25
 g26
 ((I2014
-I9
-I22
+I10
+I31
 I15
-I9
-I21
-I0
-I265
+I53
+I24
+I4
+I304
 I1
 tp3828
 (dp3829

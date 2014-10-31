@@ -33,25 +33,25 @@
 }
 
 a:link {
-    color: #867970;
+    color: #ff6e6e;
     font-style: italic;
     text-decoration: none;
 }
 
 a:hover {
-    color: #867970;
-    font-style: none;
+    color: #ff6e6e;
+    font-style: bold;
     text-decoration: none;
 }
 
 a:visited {
-    color: #867970;
+    color: #ff6e6e;
     font-style: italic;
     text-decoration: none;
 }
 
 a:active {
-    color: #867970;
+    color: #ff6e6e;
     font-style: italic;
     text-decoration: none;
 }

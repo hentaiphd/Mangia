@@ -262,6 +262,12 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
     };
     var init = function () {
       $scope.startscreen = true;
+      $scope.bgm = new Audio('assets/sound/mangiad2.wav');
+      $scope.bgm.play();
+      $scope.bgm.loop = true;
+      //if($scope.bgm.ended) {
+      //  $scope.bgm.currentTime = 0;
+      //};
     };
     init();
   }]);

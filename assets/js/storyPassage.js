@@ -105,6 +105,7 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.two_float_right = false;
       $scope.two_link_img = false;
       $scope.food_img = false;
+      $scope.startscreen = false;
 
       for(i = 0; i < rawObj.tags.length; i++){
         switch(rawObj.tags[i]) {
@@ -259,4 +260,8 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
         }
       }
     };
+    var init = function () {
+      $scope.startscreen = true;
+    };
+    init();
   }]);

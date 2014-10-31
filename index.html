@@ -9,8 +9,10 @@
   </head>
   <body>
       <div ng-controller="PassageController" class="container">
-        <span>
-          <a ng-click="fillLinkListPassage('1')" href="#">Restart (for debugging, current passage name is {{cur_psg}})</a>
+        <span ng-show="startscreen" class="centered">
+          <p>MANGIA</p>
+          <p>A game by Nina Freeman, with art by Jenny Jiao Hsia and music by Maxo.</p>
+          <a ng-click="fillLinkListPassage('1')" href="#">Click here to start.</a>
         </span>
 
         <span ng-show="list_psg" class="centered"><p><span>{{raw}}</span></p>

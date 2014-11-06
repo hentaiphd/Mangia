@@ -265,9 +265,6 @@ angular.module('storyPassage', ['ngSanitize'], function($compileProvider) {
       $scope.bgm = new Audio('assets/sound/mangiad2.wav');
       $scope.bgm.play();
       $scope.bgm.loop = true;
-      //if($scope.bgm.ended) {
-      //  $scope.bgm.currentTime = 0;
-      //};
     };
     init();
   }]);

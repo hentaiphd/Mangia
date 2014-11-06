@@ -388,7 +388,7 @@ You had always been pretty round as a child. [[You weren't huge, but you definit
 
 
 :: 13_2 [list]
-Your friend walked around, commenting on everyone's stomach. She got to you, a poked you hard, right above the belly button. You could almost hear a squishing sound in your head, and she said "your tummy is so round, Nina!"
+Your friend walked around, commenting on everyone's stomach. She got to you, and poked you hard, right above the belly button. You could almost hear a squishing sound in your head, and she said "your tummy is so round, Nina!"
 
 [[Your phone has been buzzing. Check it out.|14]]
 
@@ -479,7 +479,7 @@ You tell Emmett that you've always felt like you were fat. Your mom definitely a
 
 
 :: tomid [hoverimg]
-begin,begin_on,22
+docs_off,docs,22
 
 
 
@@ -882,7 +882,7 @@ Mom answers, and without any kind of greeting says, [["What happened? You talked
 
 
 :: 27_7 [hoverimg]
-begin,begin_on,27_8
+docs_off,docs,27_8
 
 
 
@@ -1039,12 +1039,13 @@ You hear yourself saying "a condition" in your head. You're saying it over and o
 [["Well--tell me what he said,"|31_mom2_3]] she asks.
 
 
-:: 31_mom2_3 [inline]
+:: 31_mom2_3 [list]
 "My esophagus is swollen... there's these rings. It's called eosinophilic esophagitis. That's... I have to eat soft things now..."
 
 You could choke, you say to yourself, but it's so hard to make the words come out... 
 
 [["I could choke,"|31_mom2_4]] you blurt it out and shiver.
+[["You stay silent, trying to breathe steadily."|31_mom2_4]]
 
 
 :: 36 [inline]

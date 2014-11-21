@@ -9806,7 +9806,7 @@ Tiddler
 p3008
 (dp3009
 g21
-V"My esophagus is swollen... there's these rings. It's called eosinophilic esophagitis. That's... I have to eat soft things now..."\u000a\u000aYou could choke, you say to yourself, but it's so hard to make the words come out... \u000a\u000a[["I could choke,"|31_mom2_4]] you blurt it out and shiver.\u000a[["You stay silent, trying to breathe steadily."|31_mom2_4]]
+V"My esophagus is swollen... there's these rings. It's called eosinophilic esophagitis. That's... I have to eat soft things now..."\u000a\u000aYou could choke, you say to yourself, but it's so hard to make the words come out... \u000a\u000a[[Tell her that the doctor said you could choke.|31_mom2_4]] \u000a[[Stay silent, trying to breathe steadily.|31_mom2_4]]
 p3010
 sg23
 V31_mom2_3
@@ -9817,8 +9817,8 @@ g26
 I11
 I5
 I22
+I19
 I9
-I29
 I2
 I309
 I0
